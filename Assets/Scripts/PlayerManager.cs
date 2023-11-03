@@ -27,6 +27,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] public BoxCollider2D gC;
 
     [SerializeField] public int hP = 8;
+    [SerializeField] public int sP = 4;
     private void Start()
     {
         rB = GetComponent<Rigidbody2D>();
@@ -117,13 +118,21 @@ public class PlayerManager : MonoBehaviour
 
     public void dealDamage(int _dmage)
     {
-        if (hP < 0)
+        if (sP != 0)
         {
-            hP = 0;
+            sP -= _dmage;
         }
         else
         {
-            hP -= _dmage;
+            if (hP != 0)
+            {
+                hP -= _dmage;
+            }
+            if (hP < 0)
+            {
+                hP = 0;
+            }
         }
+
     }
 }

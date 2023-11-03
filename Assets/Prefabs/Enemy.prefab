@@ -128,7 +128,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4655772926530403530}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcc422364bc1041a9be0b089e9be8fc6, type: 3}
+  m_Script: {fileID: 11500000, guid: 73fbcdfa03456db40a9e53f88f098fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerTransformation: {fileID: 0}
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4655772926530403530}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4adc98a6c787844d894b8230f7828559, type: 3}
+  m_Script: {fileID: 11500000, guid: 1268ca9865f3dfc46b3e4364ec06317a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyCollider: {fileID: 0}
