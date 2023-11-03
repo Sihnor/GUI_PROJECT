@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEditor.Rendering;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -25,6 +26,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] public float jumpTime;
     [SerializeField] public BoxCollider2D gC;
 
+    [SerializeField] public int hP = 8;
     private void Start()
     {
         rB = GetComponent<Rigidbody2D>();
@@ -62,7 +64,7 @@ public class PlayerManager : MonoBehaviour
     }
     public void JumpCheck()
     {
-        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) )&& !jumping)
+        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && !jumping)
         {
             Jump();
             jumping = true;
@@ -113,5 +115,15 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-
+    public void dealDamage(int _dmage)
+    {
+        if (hP < 0)
+        {
+            hP = 0;
+        }
+        else
+        {
+            hP -= _dmage;
+        }
+    }
 }
