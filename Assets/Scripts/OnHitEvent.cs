@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class OnHitEvent : MonoBehaviour
 {
-    [SerializeField] private Collider EnemyCollider;
+    [SerializeField] private Collider2D EnemyCollider;
 
     private PlayerManager Player;
     
@@ -22,6 +22,16 @@ public class OnHitEvent : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        other.gameObject.TryGetComponent<PlayerManager>(out this.Player);
+
+        if (this.Player)
+        {
+            this.Player.dealDamage(this.EnemyDamage);
+        }
     }
 
     private void OnCollisionEnter(Collision other)
